@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Solució de les activitats</title>
 </head>
 <body>
@@ -13,5 +14,28 @@
 
     </script>
     
+=======
+    <title>Activitat 2</title>
+</head>
+<body>
+    
+    <script>
+        //Exercici 1
+        let valor = prompt("Introdueix un numero");
+        //Revisa que hi hagi un valor (si no hi ha se'n va directe al else)
+        if(valor){
+            const num = Number(valor); //convertir el valor a numero (Funcio Number(valor) )
+            let text = "";
+            //Faré ús del iterador ternari (?) funciona com un if d'una línia
+            text = isNaN(num) ? "No és un número" : "És un número";
+            //Imprimir per pantalla el missatge que sigui el adecuat (si és o no un número)
+            console.log(text);
+          
+        }else{
+            console.log("No has introduït cap valor");
+        }
+    </script>
+
+>>>>>>> 720b0b36ce1ef6eff7491b28b14d25419b22ac64
 </body>
 </html>
