@@ -1,31 +1,38 @@
-//ex3
-// Fes un programa que permeti realitzar la conversió entre temperatures de 
-// ºC a ºF  i de ºF a ºC, d’acord amb la següent fórmula: ºF = (9.0/5.0)* (ºC)+32. 
+//ex4
+// Fes un programa que demani a l’usuari el temps total 
+// d’una trucada demanant primer els minuts i després els segons.
 
-//El programa ha de demanar a l’usuari quina conversió ha de fer (“C” o “F”) i la temperatura que es vol convertir.
+// Mostreu l’import sense IVA i calculant l’IVA (21%) sabent que la 
+// companyia telefònica cobra 10 cèntims per establir una connexió telefònica i a
+// partir d’aquest moment, 5 cèntims per minut tarificant per segons.
 
-let lletraConversió = prompt("Introdueix una lletra per la conversió de: ºC a ºF o de ºF a ºC");
+//Demano al usuari els valors inicials
+let minuts = prompt("Introdueix els minuts total: ");
+let segons = prompt("Introdueix els segons total: ");
 
-if (lletraConversió == 'F' || lletraConversió == 'C'){
-    if(lletraConversió == 'F'){
-        console.log("Conversió de Celsius a Fahrenheit")
-        let grausC = prompt("Introdueix la temperatura en graus celsius: ");
+//Centims que s'afegeixen per quan s'inicia una trucada telefónica
+let iniciTrucada = 10;
 
-        //Conversió per la lletra F
-        let F = (9.0/5.0)* (grausC)+32
-        let resultatF = `Resultat: ${F}`;
-        alert(resultatF)
-    }
-    if(lletraConversió=='C'){
-        console.log("Conversió de Fahrenheit a Celsius")
-        let grausF = prompt("Introdueix la temperatura en graus Fahrenheit: ");
-        
-        //Conversió
-        let C = (5.0 / 9.0) * ( grausF - 32);
-        let resultatC = `Resultat: ${C}`
-        alert(resultatC)
-    }
+//Centims per minut
+let cMinut = 5;
+
+//Passem minunts i segons a number (int)
+minuts = Number(minuts)
+segons = Number(segons)
+
+//Calcular preu sense IVA
+//comprovem que hagi posat algun tipus de valor dins de minutos o segons
+if(minuts || segons){
+    calcularMinuts = iniciTrucada + (cMinut * minuts);
+    //calcular els segons
+    calculcarSegons = calcularMinuts + segons;
+    //Variable per guardar el total i aplicar-li després l'IVA
+    preuSenseIVA = calculcarSegons;
+    preuAmbIVA = preuSenseIVA*1.21;
+
+    console.log("Total preu sense IVA: ", preuSenseIVA);
+    console.log("Total preu amb IVA: ", preuAmbIVA);
 }
 else{
-    alert("ERROR, introdueix una lletra vàlida per la conversió (C o F)")
+    alert("Introdueix uns valors vàlids")
 }
